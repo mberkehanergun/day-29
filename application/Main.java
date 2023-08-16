@@ -804,20 +804,20 @@ public class Main extends Application {
                     task3Button.setOnAction(task1Event -> {
                         Label resultLabel = new Label("Results will show up here.");
                         TextArea taskTextArea = new TextArea();
-                        Button loadPredictionButton = new Button("Load Prediction");
+                        Button displayUnualitiesButton = new Button("Display Unusualities");
                         Button backButtonToButtonScene = new Button("Back");
                         
                         VBox taskLayout = new VBox(10);
                         taskLayout.setAlignment(Pos.CENTER);
-                        taskLayout.getChildren().addAll(taskTextArea, loadPredictionButton, resultLabel, backButtonToButtonScene);
+                        taskLayout.getChildren().addAll(taskTextArea, displayUnualitiesButton, resultLabel, backButtonToButtonScene);
 
                         Scene taskScene = new Scene(taskLayout, 600, 500);
                         primaryStage.setScene(taskScene);
 
-                        loadPredictionButton.setOnAction(loadReportEvent -> {
+                        displayUnualitiesButton.setOnAction(loadReportEvent -> {
                         	dao.task3Display(taskTextArea);
-                        	resultLabel.setText("Prediction loaded succesfully.");
-                        	loadPredictionButton.setDisable(true);
+                        	resultLabel.setText("Unusualities displayed succesfully.");
+                        	displayUnualitiesButton.setDisable(true);
                         });
                         
                         backButtonToButtonScene.setOnAction(backToButtonEvent -> {
